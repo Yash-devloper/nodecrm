@@ -1,20 +1,19 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema(
+const clientSchema = new mongoose.Schema(
   {
-    firstName: { type: String, required: true },
-    lastName: { type: String, required: true },
+    Name: { type: String, required: true },
+    address: { type: String, required: true },
     mobileNo: { type: String, required: true },
     email: { type: String, required: true, unique: true },
-    address:{ type: String, required: true, unique: true },
-    password: { type: String, required: true },
-    repeatPassword: { type: String, required: true },
-    isAdmin: { type: Boolean, default: false, required: true },
-   
+    city: { type: String, required: true },
+    familyInformation: { type: String, required: true },
+    documentInsurance: { type: String, required: true },
+    healthInsurance: { type: String, required: true },
   },
   {
     timestamps: true,
   }
 );
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model("Client", clientSchema);
 export default User;
